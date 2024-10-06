@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/marketplace.css">
+  <title>Marketplace</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Your Listings</h1>
+    
+    <button>Create New Listing</button>
+
+    <div class="section">
+      <p><strong>Item Name</strong></p>
+
+      <p><strong>Food Description</strong></p>
+
+      <div class="section">
+        <!-- Accessible Label -->
+        <label for="deliveryOption"><strong>Pick up or Delivery Option</strong></label>
+        <select id="deliveryOption">
+          <option value="">Select an option</option>
+          <option value="Pickup">Pickup</option>
+          <option value="Delivery">Delivery</option>
+        </select>
+      </div>
+    </div>
+
+    <button>Add to Cart</button>
+    <button>Checkout</button>
+  </div>
+
+  <script>
+    // Handle the select value change
+    const deliveryOptionSelect = document.getElementById('deliveryOption');
+    deliveryOptionSelect.addEventListener('change', (event) => {
+      const selectedValue = event.target.value;
+      console.log('Selected value:', selectedValue);
+    });
+  </script>
+</body>
+</html>
