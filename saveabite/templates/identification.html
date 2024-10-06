@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identification</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h3>Add a copy of your identification card (Passport, Government ID or driver's license)</h3>
+    <form action="action_page.php" method="post" enctype="multipart/form-data">
+        <label for="myFile">Upload File</label>
+        <input type="file" id="myFile" name="filename" required title="Select your identification file" placeholder="Choose a file" aria-describedby="fileHelp">
+        <small id="fileHelp" class="form-text text-muted">Please upload a valid identification document (PDF, JPG, PNG).</small>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
