@@ -7,77 +7,26 @@
   <title>Marketplace</title>
 </head>
 <body>
-  <div class="container">
-    <h1 className="marketplace-title">YOUR LISTINGS</h1>
-    
-    <button className="createListing-btn">Create New Listing</button>
-
-    <div className="searchbar-container">
-      <h2>Search your listings</h2>
-    </div>
-
-    <div class="section">
-      <p className="item-title"><strong>Chocalate chip muffins</strong></p>
-
-      <p className="item-description"><strong>Food Description</strong></p>
-
-      <div class="dropdown">
-        <!-- Accessible Label -->
-        <label for="deliveryOption"><strong>Pick up or Delivery Option</strong></label>
-        <select id="deliveryOption">
-          <option value="">Select an option</option>
-          <option value="Pickup">Pickup</option>
-          <option value="Delivery">Delivery</option>
-        </select>
-      </div>
-    </div>
-
-    <div class="section">
-      <p className="item-title"><strong>Dominoes Pizza</strong></p>
-
-      <p className="item-description"><strong>Food Description</strong></p>
-
-      <div class="dropdown">
-        <!-- Accessible Label -->
-        <label for="deliveryOption"><strong>Pick up or Delivery Option</strong></label>
-        <select id="deliveryOption">
-          <option value="">Select an option</option>
-          <option value="Pickup">Pickup</option>
-          <option value="Delivery">Delivery</option>
-        </select>
-      </div>
-    </div>
-
-    <div class="section">
-      <p className="item-title"><strong>Salad Bowl</strong></p>
-
-      <p className="item-description"><strong>Food Description</strong></p>
-      <div>
-        
-      </div>
-      
-      <div class="dropdown">
-        <!-- Accessible Label -->
-        <label for="deliveryOption"><strong>Pick up or Delivery Option</strong></label>
-        <select id="deliveryOption">
-          <option value="">Select an option</option>
-          <option value="Pickup">Pickup</option>
-          <option value="Delivery">Delivery</option>
-        </select>
-      </div>
-    </div>
-
-    <button className="addToCart-btn">Add to Cart</button>
-    <button className="checkout-btn">Checkout</button>
+  <div class="mycard">
+    {% for x in market %}
+        <div class="card">
+            <img src="{{ x.image.url }}" alt="{{ x.title }}">
+            <div class="card-details">
+                <h3>{{ x.title }}</h3>
+                <p>{{ x.price }}</p>
+                <p>{{ x.quantity }}</p>
+                <p>{{ x.allergy_rating }}</p>
+                <p>{{ x.dietary_rating}}</p>
+                <p>{{ x.stock_status }}</p>
+                <p>{{ x.pickup_or_delivery }}</p>
+                <p>{{ x.company_name }}</p>
+            </div>
+                <div class="add-link">
+                    <a href="details/{{ x.id }}" class="btn">Add to Cart</a>
+                </div>
+        </div>
+    {% endfor %}
   </div>
-
-  <script>
-    // Handle the select value change
-    const deliveryOptionSelect = document.getElementById('deliveryOption');
-    deliveryOptionSelect.addEventListener('change', (event) => {
-      const selectedValue = event.target.value;
-      console.log('Selected value:', selectedValue);
-    });
-  </script>
+    
 </body>
 </html>

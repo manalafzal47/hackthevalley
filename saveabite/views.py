@@ -5,9 +5,10 @@ from django.shortcuts import redirect, render
 from django.urls import reverse
 from urllib.parse import quote_plus, urlencode
 from .forms import userSignupForm
+from .models import food_data
 
 
-doauth = OAuth()
+# doauth = OAuth()
 
 OAuth_instance = OAuth()
 OAuth_instance.register(
@@ -60,5 +61,12 @@ def registration_page(request):
         form = userSignupForm(request.POST)
         if form.is_valid():
             form.save()
+    else:
+        form = userSignupForm()
             
-    return render(request, 'registration_page.html', {'form': form})
+    return render(request, 'marketplace.html', {'form': form})
+
+
+def market(request):
+    market = food_data.objects.all()  # Fetch all items from the MarketItem model
+    return render(request, 'marketplace.html', {'market': market})
