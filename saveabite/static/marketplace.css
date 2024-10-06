@@ -12,7 +12,9 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px; /* Space between cards */
+    gap: 20px; 
+    height: 600px;
+    overflow: auto;
 }
 
 /* Individual card style */
