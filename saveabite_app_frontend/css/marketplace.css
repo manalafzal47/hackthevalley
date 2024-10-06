@@ -44,7 +44,6 @@ header {
 .createListing-btn,
 .back-btn,
 .quick-shopping-btn,
-.addToCart-btn,
 .checkout-btn {
     background-color: #c47f5d;
     color: white;
@@ -56,6 +55,19 @@ header {
     transition: background-color 0.3s ease;
     margin: 10px 5px; /* Space between buttons */
 }
+
+.addToCart-btn{
+    background-color: #c47f5d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+}
+
 
 .createListing-btn:hover,
 .back-btn:hover,
