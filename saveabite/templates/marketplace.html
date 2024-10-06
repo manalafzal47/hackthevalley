@@ -1,9 +1,10 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../css/marketplace.css">
+  <link rel="stylesheet" href="{% static 'marketplace.css' %}"><link rel="stylesheet" href='marketplace.css'>
   <title>Marketplace</title>
 </head>
 <body>
@@ -12,21 +13,24 @@
         <div class="card">
             <img src="{{ x.image.url }}" alt="{{ x.title }}">
             <div class="card-details">
-                <h3>{{ x.title }}</h3>
-                <p>{{ x.price }}</p>
-                <p>{{ x.quantity }}</p>
-                <p>{{ x.allergy_rating }}</p>
-                <p>{{ x.dietary_rating}}</p>
-                <p>{{ x.stock_status }}</p>
-                <p>{{ x.pickup_or_delivery }}</p>
-                <p>{{ x.company_name }}</p>
-            </div>
-                <div class="add-link">
-                    <a href="details/{{ x.id }}" class="btn">Add to Cart</a>
+                <div class="title-price">
+                    <h3>{{ x.title }}</h3>
+                    <p>{{ x.price }}</p>
                 </div>
+                <div class="additional-info">
+                    <p><strong>Quantity:</strong>{{ x.quantity }}</p>
+                    <p><strong>Allergy:</strong> {{ x.allergy_rating }}</p>
+                    <p><strong>Diet:</strong> {{ x.dietary_rating }}</p>
+                    <p><strong>Stock:</strong> {{ x.stock_status }}</p>
+                    <p><strong>Delivery:</strong> {{ x.pickup_or_delivery }}</p>
+                    <p><strong>Company:</strong> {{ x.company_name }}</p>
+                </div>
+            </div>
+            <div class="add-link">
+                <a href="details/{{ x.id }}" class="btn">Add to Cart</a>
+            </div>
         </div>
     {% endfor %}
   </div>
-    
 </body>
 </html>

@@ -1,0 +1,84 @@
+/* marketplace.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Container for the cards */
+.mycard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Space between cards */
+}
+
+/* Individual card style */
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s;
+    width: 250px; /* Reduced width for cards */
+    height: 300px; /* Set a specific height for cards */
+}
+
+.card:hover {
+    transform: scale(1.05); /* Slightly enlarge the card on hover */
+}
+
+/* Image style */
+.card img {
+    width: 100%; /* Full width */
+    height: 130px; /* Fixed height for the image */
+    object-fit: cover; /* Cover the space while maintaining aspect ratio */
+}
+
+/* Details section styling */
+.card-details {
+    padding: 5px; /* Further reduced padding for details */
+    height: 120px; /* Adjusted height to ensure visibility */
+    overflow: hidden; /* Hide overflowing content */
+}
+
+.card-details h3 {
+    font-size: 1em; /* Smaller font size */
+    margin: 0 0 4px; /* Space below the title */
+}
+
+.card-details p {
+    margin: 2px 0; /* Reduced space between paragraphs */
+    color: #555; /* Dark gray color for text */
+    font-size: 0.75em; /* Smaller font size for paragraphs */
+}
+
+/* Button style */
+.add-link {
+    text-align: center; /* Center align the button */
+    padding: 5px 0; /* Reduced space around the button */
+}
+
+.btn {
+    background-color: #28a745; /* Green color for button */
+    color: white; /* White text color */
+    padding: 5px 10px; /* Adjusted padding inside the button */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* No underline */
+    font-size: 0.8em; /* Reduced font size */
+    transition: background-color 0.3s; /* Transition for hover effect */
+}
+
+.btn:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+.title-price {
+    display: flex; /* Use flexbox for horizontal alignment */
+    justify-content: space-between; /* Space between title and price */
+    align-items: center; /* Center vertically */
+    margin-bottom: 5px; /* Space below the title and price */
+}
