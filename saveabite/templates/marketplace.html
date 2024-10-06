@@ -6,7 +6,28 @@
   <link rel="stylesheet" href="../css/marketplace.css">
   <title>Marketplace</title>
 </head>
+
 <body>
+  <header>
+    <h1 class="header-title">Marketplace</h1>
+  </header>
+
+  <div class="container">
+
+    <div class="searchbar-container">
+      <h2>Search your listings</h2>
+      <input type="text" id="search-input" placeholder="Search..." class="search-input" onkeyup="searchListings()" />
+    </div>
+
+    <div class="navigation-buttons">
+      <button class="back-btn" onclick="window.history.back();">
+        <i class="fas fa-arrow-left"></i> Go Back
+      </button>
+      <button class="quick-shopping-btn" onclick="window.location.href='shopper_swiping.html';">
+        <i class="fas fa-shopping-cart"></i> Quick Shopping
+      </button>
+    </div>
+
   <div class="mycard">
     {% for x in market %}
         <div class="card">
@@ -30,3 +51,5 @@
     
 </body>
 </html>
+
+
