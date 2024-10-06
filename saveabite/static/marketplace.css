@@ -62,7 +62,7 @@ body {
 }
 
 .btn {
-    background-color: #28a745; /* Green color for button */
+    background-color: #c47f5d; /* Green color for button */
     color: white; /* White text color */
     padding: 5px 10px; /* Adjusted padding inside the button */
     border: none; /* No border */
@@ -73,7 +73,7 @@ body {
 }
 
 .btn:hover {
-    background-color: #218838; /* Darker green on hover */
+    background-color: rgb(146, 94, 68); /* Darker green on hover */
 }
 
 .title-price {
@@ -82,3 +82,4 @@ body {
     align-items: center; /* Center vertically */
     margin-bottom: 5px; /* Space below the title and price */
 }
+
