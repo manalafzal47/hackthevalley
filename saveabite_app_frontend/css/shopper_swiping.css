@@ -1,110 +1,148 @@
-/* shopper_swiping.css */
-
+/* General styles */
 body {
     margin: 0;
-    padding: 0;
     font-family: Arial, sans-serif;
-    background-color: #f4f4f9; 
+    background-color: #f9f9f9;
 }
 
 header {
-    text-align: center;
+    background-color: #c47f5d; /* Header background color */
     padding: 20px;
-    background-color: #fff; 
-    border-bottom: 1px solid #ccc;
+    text-align: center;
+    color: white;
+}
+
+h1 {
+    margin: 0;
 }
 
 .match-buttons {
-    margin-top: 10px; 
+    margin-top: 10px;
 }
 
 .match-buttons button {
-    background-color: #c47f5d; 
-    color: white; 
-    border: none; 
-    border-radius: 5px; 
-    padding: 10px 15px; 
-    margin: 0 5px; 
-    cursor: pointer; 
+    background-color: white;
+    color: #c47f5d;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
+.match-buttons button:hover {
+    background-color: #f2e2d6;
+}
+
+/* Container styles */
 .container {
-    max-width: 400px; 
-    margin: 20px auto; 
-    padding: 20px; 
+    max-width: 800px; /* Max width for content */
+    margin: 20px auto; /* Center the container */
+    padding: 20px;
 }
 
+/* Back button */
+.back-button-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.back-btn {
+    background-color: #c47f5d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.back-btn:hover {
+    background-color: rgb(146, 94, 68);
+}
+
+/* Swiping card component */
 .swipingCard-component {
-    display: flex; 
-    justify-content: center; 
+    display: flex;
+    justify-content: center; /* Center card */
 }
 
 .card {
-    background-color: #fff;
-    border-radius: 10px; 
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow effect */
-    padding: 20px; /* Padding inside card */
-    text-align: center; /* Center text */
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 300px; /* Fixed width for cards */
+    text-align: center; /* Center align text */
+    transition: transform 0.3s;
 }
 
-.image-container {
-    margin-bottom: 15px; /* Space below image */
-}
-
-.food-image {
-    width: 100%; /* Full width for image */
-    height: auto; /* Maintain aspect ratio */
+.card:hover {
+    transform: scale(1.05); /* Scale effect on hover */
 }
 
 .item-title {
-    font-size: 1.5rem; /* Title size */
-    color: #333; /* Dark text color */
-    margin-bottom: 10px; /* Space below title */
+    font-size: 24px; /* Larger font for title */
+    margin: 10px 0;
+    color: #333;
 }
 
 .item-price {
-    font-size: 1.2rem; /* Price size */
-    color: #c47f5d; /* Custom color for price */
-    margin-bottom: 15px; /* Space below price */
+    font-size: 20px; /* Price styling */
+    color: #c47f5d;
 }
 
+/* Quantity container */
 .quantity-container {
-    display: flex; /* Flexbox for quantity control */
-    align-items: center; /* Align items vertically */
-    justify-content: center; /* Center horizontally */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
 }
 
 .quantity-container input {
     width: 50px; /* Fixed width for input */
-    margin: 0 5px; /* Space around input */
-    padding: 5px; /* Padding inside input */
-    border: 1px solid #ccc; /* Border for input */
-    border-radius: 5px; /* Rounded input */
+    text-align: center; /* Center align text */
 }
 
 .increment-btn {
-    background-color: #c47f5d; /* Button color */
-    color: white; /* Text color */
-    border: none; /* No border */
-    border-radius: 5px; /* Rounded corners */
-    padding: 5px; /* Padding */
-    cursor: pointer; /* Pointer cursor */
+    background-color: #c47f5d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px 10px;
+    transition: background-color 0.3s;
+    margin-left: 10px;
 }
 
+.increment-btn:hover {
+    background-color: rgb(146, 94, 68);
+}
+
+/* Dropdown styles */
+.dropdown {
+    margin: 15px 0;
+}
+
+/* Button styles */
 .addToCart-btn {
-    background-color: #c47f5d; /* Button color */
-    color: white; /* Text color */
-    border: none; /* No border */
-    border-radius: 5px; /* Rounded corners */
-    padding: 10px; /* Padding */
-    cursor: pointer; /* Pointer cursor */
-    justify-content: center;
-    align-content: center;
+    background-color: #4caf50; /* Green color for add to cart button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.addToCart-btn:hover {
+    background-color: #45a049;
 }
 
 .navigation {
-    display: flex; 
-    justify-content: center; 
+    display: flex;
+    justify-content: center;
     gap: 20px;
 }
 
@@ -117,31 +155,14 @@ header {
     cursor: pointer; 
     justify-content: center;
     align-content: center;
-}
-
-.swipeRight-btn{
+  }
+  
+  .swipeRight-btn{
     background-color: #c47f5d; 
     color: white; 
     border: none;
     border-radius: 5px; 
     padding: 10px; 
     cursor: pointer; 
-}
-
-.dropdown {
-    margin: 15px 0; /* Margin for dropdown */
-}
-
-.dropdown label {
-    display: block; /* Block display for label */
-    margin-bottom: 5px; /* Space below label */
-    font-weight: bold; /* Bold label */
-}
-
-select {
-    width: 100%; /* Full width for select */
-    padding: 10px; /* Padding inside select */
-    border: 1px solid #ccc; /* Border for select */
-    border-radius: 5px; /* Rounded select */
-}
-
+  }
+  
