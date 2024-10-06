@@ -85,3 +85,52 @@ body {
     margin-bottom: 5px; /* Space below the title and price */
 }
 
+header {
+    background-color: #FFA071;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+.header-title {
+    margin: 0;
+}
+
+.container {
+    max-width: 1200px; /* Container width */
+    margin: 0 auto; /* Center the container */
+    padding: 20px;
+}
+/* Search Input */
+.searchbar-container {
+    margin: 20px 0;
+}
+
+/* Navigation Buttons */
+.navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.createListing-btn:hover,
+.back-btn:hover,
+.quick-shopping-btn:hover,
+.addToCart-btn:hover,
+.checkout-btn:hover {
+    background-color: rgb(146, 94, 68);
+}
+/* Buttons */
+.quick-shopping-btn, .back-btn {
+    text-align: center; /* Center align the button */
+    padding: 5px 0; 
+    background-color: #c47f5d; /* Green color for button */
+    color: white; /* White text color */
+    padding: 5px 10px; /* Adjusted padding inside the button */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* No underline */
+    font-size: 0.8em; /* Reduced font size */
+    transition: background-color 0.3s; /* Transition for hover effect */
+}
+

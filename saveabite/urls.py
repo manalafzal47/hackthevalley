@@ -9,4 +9,5 @@ urlpatterns = [
     path('callback', views.callback, name="callback"),
     path('register', views.registration_page, name='registration_page'),
     path('market', views.market, name='market'),
+    path('shopping', views.shopping, name='shopping')
 ]

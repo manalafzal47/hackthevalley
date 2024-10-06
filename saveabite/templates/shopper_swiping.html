@@ -1,34 +1,56 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../css/marketplace.css">
-  <title>FoodSwipe</title>
+  <link rel="stylesheet" href="{% static 'marketplace.css' %}"><link rel="stylesheet" href='marketplace.css'>
+  <title>Marketplace</title>
 </head>
+
 <body>
-  <div className="swipingCard-component">
-        <div>
-            <div class="section">
-                <p className="item-title"><strong>Dominoes Pizza</strong></p>
-                <p className="item-description"><strong>Food Description</strong></p>
-            </div>
-        </div>
+  <header>
+    <h1 class="header-title">Marketplace</h1>
+  </header>
+
+  <div class="container">
+    <div class="searchbar-container">
+      <h2>Find your next meal from restaurants near you</h2>
+      <p>At less than half the price...</p>
+      <input type="text" id="search-input" placeholder="Search..." class="search-input" onkeyup="searchListings()" />
     </div>
 
-    <div>
-        <p className="item-title"><strong>Dominoes Pizza</strong></p>
-        <p className="item-description"><strong>Price</strong></p>
-        <p><strong>Quantity</strong></p>
-        <div class="dropdown">
-            <label for="deliveryOption"><strong>Pick up or Delivery Option</strong></label>
-            <select id="deliveryOption">
-              <option value="">Select an option</option>
-              <option value="Pickup">Pickup</option>
-              <option value="Delivery">Delivery</option>
-            </select>
-        </div>
+    <div class="navigation-buttons">
+      <button class="back-btn" onclick="window.history.back();">
+        <i class="fas fa-arrow-left"></i> Go Back
+      </button>
     </div>
+
+  <div class="mycard">
+    {% for x in market %}
+        <div class="card">
+            <img src="{{ x.image.url }}" alt="{{ x.title }}">
+            <div class="card-details">
+                <div class="title-price">
+                    <h3>{{ x.title }}</h3>
+                    <p>{{ x.price }}</p>
+                </div>
+                <div class="additional-info">
+                    <p><strong>Quantity:</strong>{{ x.quantity }}</p>
+                    <p><strong>Allergy:</strong> {{ x.allergy_rating }}</p>
+                    <p><strong>Diet:</strong> {{ x.dietary_rating }}</p>
+                    <p><strong>Stock:</strong> {{ x.stock_status }}</p>
+                    <p><strong>Delivery:</strong> {{ x.pickup_or_delivery }}</p>
+                    <p><strong>Company:</strong> {{ x.company_name }}</p>
+                </div>
+            </div>
+            <div class="add-link">
+                <a href="details/{{ x.id }}" class="btn">Add to Cart</a>
+            </div>
+        </div>
+    {% endfor %}
   </div>
 </body>
 </html>
+
+

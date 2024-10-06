@@ -70,3 +70,7 @@ def registration_page(request):
 def market(request):
     market_items = food_data.objects.all()  # Fetch all items from the MarketItem model
     return render(request, 'marketplace.html', {'market': market_items})
+
+def shopping(request):
+    shopping_items = food_data.objects.all()
+    return render((request, 'shopper_swiping.html', {'shopping': shopping_items}))
