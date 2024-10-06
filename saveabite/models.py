@@ -26,21 +26,6 @@ class food_data(models.Model):
 
 
 class user_signup(models.Model):
-
-    ALLERGY_CHOICES = [
-        ('none', 'None'),
-        ('peanuts', 'Peanuts'),
-        ('shellfish', 'Shellfish'),
-        ('dairy', 'Dairy'),
-        ('eggs', 'Eggs'),
-        ('gluten', 'Gluten'),
-        ('soy', 'Soy'),
-        ('tree_nuts', 'Tree Nuts'),
-        ('wheat', 'Wheat'),
-        ('fish', 'Fish'),
-        ('other', 'Other'),
-    ]
-
     gov_fname = models.CharField(max_length=255, default='Unknown', blank=True, null=True)
     gov_lname = models.CharField(max_length=255, default='Unknown', blank=True, null=True)
     phone_number = models.TextField(max=10)
@@ -51,6 +36,7 @@ class user_signup(models.Model):
     zip_code = models.CharField(max_length=20)
     country = CountryField()
     allergy = models.CharField(max_length=255, choices=ALLERGY_CHOICES, default='none')
+    dietary_restrictions = models.CharField(max_length=, choices=DIETARY_RESTRICTIONS_CHOICES, blank=True, null=True)
 
     def __str__(self):
         return self.gov_fname
