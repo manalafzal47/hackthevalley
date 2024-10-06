@@ -1,0 +1,147 @@
+/* shopper_swiping.css */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9; 
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff; 
+    border-bottom: 1px solid #ccc;
+}
+
+.match-buttons {
+    margin-top: 10px; 
+}
+
+.match-buttons button {
+    background-color: #c47f5d; 
+    color: white; 
+    border: none; 
+    border-radius: 5px; 
+    padding: 10px 15px; 
+    margin: 0 5px; 
+    cursor: pointer; 
+}
+
+.container {
+    max-width: 400px; 
+    margin: 20px auto; 
+    padding: 20px; 
+}
+
+.swipingCard-component {
+    display: flex; 
+    justify-content: center; 
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 10px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    padding: 20px; /* Padding inside card */
+    text-align: center; /* Center text */
+}
+
+.image-container {
+    margin-bottom: 15px; /* Space below image */
+}
+
+.food-image {
+    width: 100%; /* Full width for image */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.item-title {
+    font-size: 1.5rem; /* Title size */
+    color: #333; /* Dark text color */
+    margin-bottom: 10px; /* Space below title */
+}
+
+.item-price {
+    font-size: 1.2rem; /* Price size */
+    color: #c47f5d; /* Custom color for price */
+    margin-bottom: 15px; /* Space below price */
+}
+
+.quantity-container {
+    display: flex; /* Flexbox for quantity control */
+    align-items: center; /* Align items vertically */
+    justify-content: center; /* Center horizontally */
+}
+
+.quantity-container input {
+    width: 50px; /* Fixed width for input */
+    margin: 0 5px; /* Space around input */
+    padding: 5px; /* Padding inside input */
+    border: 1px solid #ccc; /* Border for input */
+    border-radius: 5px; /* Rounded input */
+}
+
+.increment-btn {
+    background-color: #c47f5d; /* Button color */
+    color: white; /* Text color */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 5px; /* Padding */
+    cursor: pointer; /* Pointer cursor */
+}
+
+.addToCart-btn {
+    background-color: #c47f5d; /* Button color */
+    color: white; /* Text color */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px; /* Padding */
+    cursor: pointer; /* Pointer cursor */
+    justify-content: center;
+    align-content: center;
+}
+
+.navigation {
+    display: flex; 
+    justify-content: center; 
+    gap: 20px;
+}
+
+.swipeLeft-btn{
+    background-color: #c47f5d; 
+    color: white; 
+    border: none;
+    border-radius: 5px; 
+    padding: 10px; 
+    cursor: pointer; 
+    justify-content: center;
+    align-content: center;
+}
+
+.swipeRight-btn{
+    background-color: #c47f5d; 
+    color: white; 
+    border: none;
+    border-radius: 5px; 
+    padding: 10px; 
+    cursor: pointer; 
+}
+
+.dropdown {
+    margin: 15px 0; /* Margin for dropdown */
+}
+
+.dropdown label {
+    display: block; /* Block display for label */
+    margin-bottom: 5px; /* Space below label */
+    font-weight: bold; /* Bold label */
+}
+
+select {
+    width: 100%; /* Full width for select */
+    padding: 10px; /* Padding inside select */
+    border: 1px solid #ccc; /* Border for select */
+    border-radius: 5px; /* Rounded select */
+}
+

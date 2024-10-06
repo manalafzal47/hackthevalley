@@ -1,34 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../css/marketplace.css">
-  <title>FoodSwipe</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/shopper_swiping.css"> <!-- Correct path to your CSS file -->
+    <title>FoodSwipe</title>
 </head>
 <body>
-  <div className="swipingCard-component">
-        <div>
-            <div class="section">
-                <p className="item-title"><strong>Dominoes Pizza</strong></p>
-                <p className="item-description"><strong>Food Description</strong></p>
+    <header>
+        <h1>FoodSwipe</h1>
+        <div class="match-buttons">
+            <button>10 Closest Matches</button>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="swipingCard-component"> 
+            <div class="card">
+                <h2 class="item-title">Chocolate Chip Muffins</h2>
+                <p class="item-price"><strong>Price: $3.99</strong></p>
+
+                <div class="quantity-container">
+                    <label for="quantity"><strong>Quantity:</strong></label>
+                    <input type="number" id="quantity" value="2" min="1">
+                    <button class="increment-btn">+</button>
+                </div>
+                
+                <div class="dropdown">
+                    <label for="deliveryOption"><strong>Pick up or Deliver</strong></label>
+                    <select id="deliveryOption">
+                        <option value="Pickup">Pickup</option>
+                        <option value="Delivery">Delivery</option>
+                    </select>
+                </div>
+
+                <button class="addToCart-btn">Add to Cart</button>
             </div>
         </div>
     </div>
 
-    <div>
-        <p className="item-title"><strong>Dominoes Pizza</strong></p>
-        <p className="item-description"><strong>Price</strong></p>
-        <p><strong>Quantity</strong></p>
-        <div class="dropdown">
-            <label for="deliveryOption"><strong>Pick up or Delivery Option</strong></label>
-            <select id="deliveryOption">
-              <option value="">Select an option</option>
-              <option value="Pickup">Pickup</option>
-              <option value="Delivery">Delivery</option>
-            </select>
+    <footer>
+        <div class="navigation">
+            <button class="swipeLeft-btn">Swipe Left</button>
+            <button class="swipeRight-btn">Swipe Right</button>
         </div>
-    </div>
-  </div>
+    </footer>
 </body>
 </html>
