@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,16 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Registration</title>
-    
+    <link rel="stylesheet" href="{% static 'registration.css' %}">
 </head>
 <body>
-    <div class="reg_header">
-        <h2>Welcome to Save a Bite</h2>
-        <p>Help us serve you better answering the questions below</p>
-    </div>
-
     <div class="reg-container">
-        <form action = "" method="POST" class="user_signup">
+        <div class="reg-header">
+            <h2>Welcome to Save A Bite</h2>
+            <p>Help us serve you better answering the questions below</p>
+        </div>
+        <form action = "{% url 'registration_page' %}" method="POST" class="user-signup">
             {% csrf_token %}
             <div class="reg">
                 <p>Government First Name</p>

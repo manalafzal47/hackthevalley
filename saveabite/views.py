@@ -61,12 +61,12 @@ def registration_page(request):
         form = userSignupForm(request.POST)
         if form.is_valid():
             form.save()
-    else:
-        form = userSignupForm()
+            return redirect('market')
+   
             
-    return render(request, 'marketplace.html', {'form': form})
+    return render(request, 'registration_page.html', {'form': form})
 
 
 def market(request):
-    market = food_data.objects.all()  # Fetch all items from the MarketItem model
-    return render(request, 'marketplace.html', {'market': market})
+    market_items = food_data.objects.all()  # Fetch all items from the MarketItem model
+    return render(request, 'marketplace.html', {'market': market_items})

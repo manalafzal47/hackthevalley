@@ -24,7 +24,7 @@ class food_data(models.Model):
     company_name = models.CharField(max_length=255, default='Unknown', blank=True, null=True)
 
     def __str__(self):
-        return self.name
+        return self.title
 
 
 

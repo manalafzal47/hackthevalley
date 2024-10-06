@@ -70,7 +70,6 @@ class foodMarket(forms.ModelForm):
         ('tree_nuts', 'Tree Nuts'),
         ('wheat', 'Wheat'),
         ('fish', 'Fish'),
-        ('other', 'Other'),
     ]
 
     allergy_rating = forms.MultipleChoiceField(
