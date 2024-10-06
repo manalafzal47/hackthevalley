@@ -28,15 +28,15 @@ class food_data(models.Model):
 class user_signup(models.Model):
     gov_fname = models.CharField(max_length=255, default='Unknown', blank=True, null=True)
     gov_lname = models.CharField(max_length=255, default='Unknown', blank=True, null=True)
-    phone_number = models.TextField(max=10)
+    phone_number = models.TextField(max_length=10)
     birthday = models.DateField()
     street_address = models.CharField(max_length=255)
     city = models.CharField(max_length=100)
     state = models.CharField(max_length=100)
     zip_code = models.CharField(max_length=20)
     country = CountryField()
-    allergy = models.CharField(max_length=255, choices=ALLERGY_CHOICES, default='none')
-    dietary_restrictions = models.CharField(max_length=, choices=DIETARY_RESTRICTIONS_CHOICES, blank=True, null=True)
+    allergy = models.CharField(max_length=255, default='none')
+    dietary_restrictions = models.CharField(max_length=255, blank=True, null=True)
 
     def __str__(self):
         return self.gov_fname
