@@ -1,0 +1,35 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #c47f5d;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+}
+
+.container {
+    text-align: center; /* Center align the text */
+}
+
+h1 {
+    font-size: 4em; /* Large font size for the title */
+    color: white; /* Green color for the title */
+    margin: 0; /* Remove default margin */
+}
+
+.login-button {
+    display: inline-block; /* Make the link behave like a button */
+    background-color: white; /* Green background */
+    color: #c47f5d; /* White text color */
+    padding: 10px 20px; /* Padding for the button */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* No underline */
+    font-size: 1.2em; /* Larger font size for the button */
+    margin-top: 20px; /* Space above the button */
+    transition: background-color 0.3s; /* Transition for hover effect */
+}
+
+.login-button:hover {
+    background-color: rgb(146, 94, 68); /* Darker green on hover */
+}
