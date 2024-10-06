@@ -1,7 +1,8 @@
 from django import forms
 from .models import user_signup
 
-class user_signup(forms.ModelForm):
+
+class userSignupForm(forms.ModelForm):
     objects = None
 
     ALLERGY_CHOICES = [
@@ -18,7 +19,7 @@ class user_signup(forms.ModelForm):
         ('other', 'Other'),
     ]
 
-    allergy = forms.ChoiceField(
+    allergy = forms.MultipleChoiceField(
         choices=ALLERGY_CHOICES,
         widget=forms.CheckboxSelectMultiple
     )
@@ -33,7 +34,7 @@ class user_signup(forms.ModelForm):
         ('kosher', 'Kosher'),
     ]
 
-    dietary_restrictions = forms.ChoiceField(
+    dietary_restrictions = forms.MultipleChoiceField(
         choices=DIETARY_RESTRICTIONS_CHOICES,
         widget=forms.CheckboxSelectMultiple
     )
@@ -42,16 +43,16 @@ class user_signup(forms.ModelForm):
         model = user_signup
         fields = "__all__"
         labels = {
-            'gov_fname', 'Governement First Name',
-            'gov_lname', 'Government Last Name',
-            'phone_number', 'Phone Number',
-            'birthday', 'Birthday',
-            'street_address', 'Street Address',
-            'city', 'City',
-            'state', 'State',
-            'zip_code', 'Zip Code',
-            'country', 'Country',
-            'allergy', 'Allergies',
-            'dietary_restrictions', 'Dietary Restrictions'
+            'gov_fname': 'Governement First Name',
+            'gov_lname': 'Government Last Name',
+            'phone_number': 'Phone Number',
+            'birthday': 'Birthday',
+            'street_address': 'Street Address',
+            'city': 'City',
+            'state': 'State',
+            'zip_code': 'Zip Code',
+            'country': 'Country',
+            'allergy': 'Allergies',
+            'dietary_restrictions': 'Dietary Restrictions'
         }
     

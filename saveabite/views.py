@@ -4,6 +4,7 @@ from django.conf import settings
 from django.shortcuts import redirect, render
 from django.urls import reverse
 from urllib.parse import quote_plus, urlencode
+from .forms import userSignupForm
 
 
 doauth = OAuth()
@@ -27,7 +28,7 @@ def login(request):
 def callback(request):
     token = OAuth_instance.auth0.authorize_access_token(request)
     request.session["user"] = token
-    return redirect(request.build_absolute_uri(reverse("index")))
+    return redirect(request.build_absolute_uri(reverse("registration_page")))
 
 def logout(request):
     request.session.clear()
@@ -52,3 +53,12 @@ def index(request):
             "pretty": json.dumps(request.session.get("user"), indent=4),
         },
     )
+
+def registration_page(request):
+    form = userSignupForm()
+    if request.method == 'POST':
+        form = userSignupForm(request.POST)
+        if form.is_valid():
+            form.save()
+            
+    return render(request, 'registration_page.html', {'form': form})
