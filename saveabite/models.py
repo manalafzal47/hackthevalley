@@ -28,7 +28,7 @@ class food_data(models.Model):
 class user_signup(models.Model):
     gov_fname = models.CharField(max_length=255, default='Unknown', blank=True, null=True)
     gov_lname = models.CharField(max_length=255, default='Unknown', blank=True, null=True)
-    phone_number = models.TextField(max_length=10)
+    phone_number = models.CharField(max_length=12)
     birthday = models.DateField()
     street_address = models.CharField(max_length=255)
     city = models.CharField(max_length=100)
