@@ -1,5 +1,5 @@
 from django import forms
-from .models import user_signup
+from .models import user_signup, food_data
 
 
 class userSignupForm(forms.ModelForm):
@@ -55,4 +55,44 @@ class userSignupForm(forms.ModelForm):
             'allergy': 'Allergies',
             'dietary_restrictions': 'Dietary Restrictions'
         }
-    
+
+class foodMarket(forms.ModelForm): 
+    objects = None   
+
+    ALLERGY_CHOICES = [
+        ('none', 'None'),
+        ('peanuts', 'Peanuts'),
+        ('shellfish', 'Shellfish'),
+        ('dairy', 'Dairy'),
+        ('eggs', 'Eggs'),
+        ('gluten', 'Gluten'),
+        ('soy', 'Soy'),
+        ('tree_nuts', 'Tree Nuts'),
+        ('wheat', 'Wheat'),
+        ('fish', 'Fish'),
+        ('other', 'Other'),
+    ]
+
+    allergy_rating = forms.MultipleChoiceField(
+        choices=ALLERGY_CHOICES,
+        widget=forms.CheckboxSelectMultiple
+    )
+
+    DIETARY_RESTRICTIONS_CHOICES = [
+        ('vegetarian', 'Vegetarian'),
+        ('vegan', 'Vegan'),
+        ('pescatarian', 'Pescatarian'),
+        ('gluten_free', 'Gluten-Free'),
+        ('keto', 'Keto'),
+        ('halal', 'Halal'),
+        ('kosher', 'Kosher'),
+    ]
+
+    dietary_rating = forms.MultipleChoiceField(
+        choices=DIETARY_RESTRICTIONS_CHOICES,
+        widget=forms.CheckboxSelectMultiple
+    )
+
+    class Meta:
+        model = food_data
+        fields = "__all__"
